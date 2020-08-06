@@ -1,0 +1,14 @@
+UEs = [60,120,180,240,300,360,420,480,540,600,660,720,780,840,900,960,1020,1080,1140,1200];
+plot(UEs,success_singleshot(1,:),'-or');
+hold on;
+plot(UEs,success_singleshot(2,:),'-db');
+hold on;
+plot(UEs,success_singleshot(3,:),'-^m');
+hold on;
+plot(UEs,success_singleshot(4,:),'-xk');
+ylim([0,1.1]);
+xlim([60,1200]);
+xlabel('N');
+ylabel('Success Probability');
+legend({'\bf{Only back-off method}','\bf{(\alpha = 0.9,T_{acb} = 4s)}','\bf{(\alpha = 0.7,T_{acb} = 8s)}','\bf{(\alpha = 0.5,T_{acb} = 16s)}'},'Location','Northwest');
+set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
